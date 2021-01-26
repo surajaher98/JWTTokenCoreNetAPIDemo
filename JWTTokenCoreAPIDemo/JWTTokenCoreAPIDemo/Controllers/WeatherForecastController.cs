@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using JWTTokenCoreAPIDemo.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace JWTTokenCoreAPIDemo.Controllers
 {
-  [Authorize]
   [ApiController]
   [Route("[controller]")]
   public class WeatherForecastController : ControllerBase
@@ -24,17 +24,24 @@ namespace JWTTokenCoreAPIDemo.Controllers
     {
       _logger = logger;
     }
+    [Authorize(Roles = Role.User)]
     [HttpGet]
-    public IEnumerable<WeatherForecast> Get()
+    [Route("userNames")]
+    public List<string> UserNames()
     {
-      var rng = new Random();
-      return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-      {
-        Date = DateTime.Now.AddDays(index),
-        TemperatureC = rng.Next(-20, 55),
-        Summary = Summaries[rng.Next(Summaries.Length)]
-      })
-      .ToArray();
+      return new List<string>  {
+            "Admin", "Admin1", "Admin2", "Admin3", "Admin3", "Admin4", "Admin5" };
+    }
+
+
+    [Authorize(Roles = Role.Admin)]
+    [HttpGet]
+    [Route("adminNames")]
+    public List<string> AdminNames()
+    {
+
+      return new List<string>  {
+            "Admin", "Admin1", "Admin2", "Admin3", "Admin3", "Admin4", "Admin5" };
     }
   }
 }

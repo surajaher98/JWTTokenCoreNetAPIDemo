@@ -1,4 +1,5 @@
-﻿using JWTTokenCoreAPIDemo.Models;
+﻿using JWTTokenCoreAPIDemo.Constants;
+using JWTTokenCoreAPIDemo.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
@@ -20,12 +21,10 @@ namespace JWTTokenCoreAPIDemo.Helper
       List<Claim> authClaims = new List<Claim>
       {
         new Claim("User", JsonConvert.SerializeObject(userDetails)),
-        //new Claim(JwtRegisteredClaimNames.Jti, new Guid().ToString())
+        new Claim(ClaimTypes.Role, Role.Admin)
       };
-      foreach (string role in userDetails.Roles)
-      {
-        authClaims.Add(new Claim(ClaimTypes.Role, role));
-      }
+
+     
       var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JWT:SecretKey"]));
 
       var token = new JwtSecurityToken(
