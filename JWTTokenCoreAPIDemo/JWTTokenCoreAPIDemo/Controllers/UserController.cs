@@ -32,7 +32,8 @@ namespace JWTTokenCoreAPIDemo.Controllers
      UserDetails user =  _userService.GetUserDetails(req);
       if (user != null)
       {
-        var result = TokenManager.GenerateToken(user, _config);
+        var result = TokenManager.GenerateToken(user, _config, _userService);
+        if (result == null) return Unauthorized();
         return Ok(result);
       }
       return Unauthorized();
@@ -42,8 +43,9 @@ namespace JWTTokenCoreAPIDemo.Controllers
     [Route("token/refreshToken")]
     public IActionResult RefreshToken(RefreshTokenRequest req)
     {
-        var result =  RefreshTokenManager.RefreshToken(req.AccessToken, req.RefreshToken, _config);
-        return Ok(result);
+        var result =  RefreshTokenManager.RefreshToken(req.AccessToken, req.RefreshToken, _config, _userService);
+      if (result == null) return Unauthorized(); 
+      return Ok(result);
     }
 
   }

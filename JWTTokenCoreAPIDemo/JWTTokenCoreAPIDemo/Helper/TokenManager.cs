@@ -1,5 +1,6 @@
 ﻿using JWTTokenCoreAPIDemo.Constants;
 using JWTTokenCoreAPIDemo.Models;
+using JWTTokenCoreAPIDemo.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
@@ -15,15 +16,18 @@ namespace JWTTokenCoreAPIDemo.Helper
 {
   public class TokenManager
   {
-    public static AuthManager GenerateToken(UserDetails userDetails, dynamic config)
+    public static AuthManager GenerateToken(UserDetails userDetails, dynamic config, IUserService userService)
     {
 
       List<Claim> authClaims = new List<Claim>
       {
         new Claim("User", JsonConvert.SerializeObject(userDetails)),
-        new Claim(ClaimTypes.Role, Role.Admin)
-      };
+        };
 
+      foreach (string role in  userDetails.Roles.Split(","))
+      {
+        authClaims.Add(new Claim(ClaimTypes.Role, role));
+      }
      
       var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JWT:SecretKey"]));
 
@@ -37,6 +41,7 @@ namespace JWTTokenCoreAPIDemo.Helper
       string accessToken = new JwtSecurityTokenHandler().WriteToken(token);
       string refreshToken = RefreshTokenManager.GenerateRefreshToken();
       // AddAccessAndRefreshToken(); //Add refreshAnd Refresh Token to DB
+      userService.AddTokenInfo(userDetails.UserId, accessToken, refreshToken, token.ValidTo);
 
       return new AuthManager
       {

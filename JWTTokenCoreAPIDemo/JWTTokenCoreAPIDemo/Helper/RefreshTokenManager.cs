@@ -1,4 +1,5 @@
 ﻿using JWTTokenCoreAPIDemo.Models;
+using JWTTokenCoreAPIDemo.Services;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using System;
@@ -15,16 +16,20 @@ namespace JWTTokenCoreAPIDemo.Helper
   public class RefreshTokenManager
   {
 
-    public static AuthManager RefreshToken(string token, string refreshToken, dynamic config)
+    public static AuthManager RefreshToken(string accessToken, string refreshToken, dynamic config, IUserService userService)
     {
-      ClaimsPrincipal principal = GetPrincipalFromExpiredToken(token, config["JWT:SecretKey"]);
+      ClaimsPrincipal principal = GetPrincipalFromExpiredToken(accessToken, config["JWT:SecretKey"]);
       var userDetails = JsonConvert.DeserializeObject<UserDetails>(principal.Claims.FirstOrDefault(claim => claim.Type == "User").Value); // ; // 
-
       if (userDetails != null)
       {
         // CheckAccessAndRefreshTokenIsPresent in DB against that User
-        // DeleteAccessAndRefreshToken from DB
-        return TokenManager.GenerateToken(userDetails, config);
+        if (userService.CheckTokensExist(userDetails.UserId, accessToken, refreshToken))
+        {
+          // DeleteAccessAndRefreshToken from DB
+        if (userService.CheckTokensExist(userDetails.UserId, accessToken, refreshToken))
+          userService.DeleteToken(userDetails.UserId, accessToken, refreshToken);
+          return TokenManager.GenerateToken(userDetails, config, userService);
+        }
       }
       return null;
     }

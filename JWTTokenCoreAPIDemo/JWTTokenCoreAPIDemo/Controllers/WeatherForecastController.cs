@@ -13,10 +13,6 @@ namespace JWTTokenCoreAPIDemo.Controllers
   [Route("[controller]")]
   public class WeatherForecastController : ControllerBase
   {
-    private static readonly string[] Summaries = new[]
-    {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
 
     private readonly ILogger<WeatherForecastController> _logger;
 
@@ -26,20 +22,19 @@ namespace JWTTokenCoreAPIDemo.Controllers
     }
     [Authorize(Roles = Role.User)]
     [HttpGet]
-    [Route("userNames")]
-    public List<string> UserNames()
+    [Route("getUserNames")]
+    public List<string> GetUserNames()
     {
       return new List<string>  {
-            "Admin", "Admin1", "Admin2", "Admin3", "Admin3", "Admin4", "Admin5" };
+            "user1", "user2", "user3", "user4", "user5", "user6", "user7" };
     }
 
 
     [Authorize(Roles = Role.Admin)]
     [HttpGet]
-    [Route("adminNames")]
-    public List<string> AdminNames()
+    [Route("GetAdminNames")]
+    public List<string> GetAdminNames()
     {
-
       return new List<string>  {
             "Admin", "Admin1", "Admin2", "Admin3", "Admin3", "Admin4", "Admin5" };
     }

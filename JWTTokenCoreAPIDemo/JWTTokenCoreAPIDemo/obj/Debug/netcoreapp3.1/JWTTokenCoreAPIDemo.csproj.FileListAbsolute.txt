@@ -17,8 +17,6 @@ D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\bin\Debug\netcoreapp
 D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\obj\Debug\netcoreapp3.1\JWTTokenCoreAPIDemo.AssemblyInfoInputs.cache
 D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\obj\Debug\netcoreapp3.1\JWTTokenCoreAPIDemo.AssemblyInfo.cs
-D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\obj\Debug\netcoreapp3.1\JWTTokenCoreAPIDemo.csproj.CoreCompileInputs.cache
-D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\obj\Debug\netcoreapp3.1\JWTTokenCoreAPIDemo.MvcApplicationPartsAssemblyInfo.cache
 D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\obj\Debug\netcoreapp3.1\JWTTokenCoreAPIDemo.RazorTargetAssemblyInfo.cache
 D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\obj\Debug\netcoreapp3.1\JWTTokenCoreAPIDemo.csproj.CopyComplete
 D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\obj\Debug\netcoreapp3.1\staticwebassets\JWTTokenCoreAPIDemo.StaticWebAssets.Manifest.cache
@@ -26,4 +24,14 @@ D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\obj\Debug\netcoreapp
 D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\obj\Debug\netcoreapp3.1\JWTTokenCoreAPIDemo.dll
 D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\obj\Debug\netcoreapp3.1\JWTTokenCoreAPIDemo.pdb
 D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\obj\Debug\netcoreapp3.1\JWTTokenCoreAPIDemo.genruntimeconfig.cache
+D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\obj\Debug\netcoreapp3.1\JWTTokenCoreAPIDemo.Properties.Resource.resources
+D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\obj\Debug\netcoreapp3.1\JWTTokenCoreAPIDemo.csproj.GenerateResource.cache
+D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\obj\Debug\netcoreapp3.1\JWTTokenCoreAPIDemo.csproj.CoreCompileInputs.cache
+D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\obj\Debug\netcoreapp3.1\JWTTokenCoreAPIDemo.MvcApplicationPartsAssemblyInfo.cache
 D:\SelfPOC\JWTToken\JWTTokenCoreAPIDemo\JWTTokenCoreAPIDemo\obj\Debug\netcoreapp3.1\JWTTokenCoreAPIDemo.csprojAssemblyReference.cache
